@@ -15,7 +15,25 @@
   <title>jot</title>
 </head>
 
-<body>
+<style>
+  body.debug .container,
+  body.debug .container-fluid {
+    outline: 2px double blue;
+    outline-offset: -2px;
+  }
+
+  body.debug .row {
+    outline: 2px dashed red;
+    outline-offset: -2px;
+  }
+
+  body.debug [class*="col-"] {
+    outline: 2px dotted forestgreen;
+    outline-offset: -3px;
+  }
+</style>
+
+<body class="bg-info">
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
       <a class="navbar-brand ms-3" href="#">
@@ -28,8 +46,55 @@
   <main>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+        <div class="col-4 my-5">
+          <div id="app">
+            <!-- SECTION Notes Entry -->
+            <div id="note-list">
+              <!-- <h1 onclick="" class="selectable">Title <i class="mdi mdi mdi-dots-circle cir-color-yellow fs-5"></i></h1> -->
+            </div>
+
+            <!-- SECTION Form Entry -->
+            <form onsubmit="app.notesController.createNote()">
+              <div class="mb-3">
+                <div class="row">
+                  <div class="col-8">
+                    <label for="title" class="form-label text-light">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" aria-describedby="title"
+                      minlength="3" maxlength="15" required>
+                  </div>
+                  <div class="col-4">
+                    <label for="color" class="form-label text-light">Color</label>
+                    <select class="form-select" aria-label="Default select example" id="color" name="color">
+                      <option value="red">Red</option>
+                      <option value="yellow">Yellow</option>
+                      <option value="green">Green</option>
+                      <option value="black">Black</option>
+                      <option value="white">White</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+        <!-- SECTION Active Note Area! -->
+        <div class="col-8 m-auto border rounded text-light my-5" id="activeNote">
+          <!-- <div class="row">
+            <div class="col-3">
+              <h1>Title <i class="mdi mdi mdi-dots-circle cir-color-yellow fs-5"></i></h1>
+              <h5>Date Created:</h5>
+              <h5>Date Updated:</h5>
+            </div>
+            <div class="col-8">
+              <textarea class="form-control my-5" name="body" id="body" style="height: 50vh;">
+
+              </textarea>
+            </div>
+            <div class="col-1">
+              <button onclick="" class="btn btn-danger fs-1"><i class="mdi mdi-delete-circle"></i></button>
+            </div>
+          </div> -->
         </div>
       </div>
     </div>

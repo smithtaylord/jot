@@ -1,35 +1,54 @@
+import { appState } from "../AppState.js";
 import { notesService } from "../Services/NotesService.js";
+import { getFormData } from "../Utils/FormHandler.js";
+import { Pop } from "../Utils/Pop.js";
+import { setHTML } from "../Utils/Writer.js";
 
 function _drawNotes() {
-    console.log('_drawNotes Works');
+    let template = ''
+    appState.notes.forEach(n => template += n.ListTemplate)
+    setHTML('note-list', template)
+    console.log(appState.notes)
 }
 
 function _drawNote() {
-    console.log('_drawNotes Works');
+    let note = appState.note
+    // @ts-ignore
+    setHTML('activeNote', note.ActiveNoteTemplate)
 }
 
 export class NotesController {
 
     constructor() {
-        console.log('Notes Constructor Working!');
         // Testing that functions are hooked up can be removed late
-        _drawNote()
         _drawNotes()
-        this.createNote()
-        this.setNote()
-        this.deleteNote()
-        this.saveNote()
+        appState.on('notes', _drawNotes)
+        appState.on('note', _drawNote)
 
     }
 
     createNote() {
-        console.log('create note controller works');
-        notesService.createNote()
+        try {
+            // @ts-ignore
+            window.event.preventDefault()
+            // @ts-ignore
+            const form = window.event.target
+            const formData = getFormData(form)
+            notesService.createNote(formData)
+            // @ts-ignore
+            form.reset()
+
+        } catch (error) {
+            Pop.error(error)
+        }
     }
 
-    setNote() {
-        console.log('set note controller works');
-        notesService.setNote()
+    setNote(noteId) {
+        try {
+            notesService.setNote(noteId)
+        } catch (error) {
+            Pop.error(error)
+        }
     }
 
     deleteNote() {
