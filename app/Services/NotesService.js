@@ -1,5 +1,7 @@
+
 import { appState } from "../AppState.js";
 import { Note } from "../Models/Note.js";
+import { Pop } from "../Utils/Pop.js";
 import { saveState } from "../Utils/Store.js";
 
 
@@ -12,9 +14,12 @@ class NotesService {
         note.body = updatedBody
         // @ts-ignore
         note.dateUpdated = new Date().toLocaleString('en-US')
+        // @ts-ignore
         note.charCount = charCount
+        // @ts-ignore
         note.wordCount = wordCount
         saveState('notes', appState.notes)
+
         appState.emit('notes')
         appState.emit('note')
 

@@ -37,7 +37,7 @@ export class Note {
         </div>
         </div>
         <div class="col-12 col-md-8">
-            <textarea onblur="app.notesController.saveNote()" class="form-control my-5 bg-wwhite text-blue" name="body" id="body" style="height: 50vh;">
+            <textarea onblur="app.notesController.saveNote()" class="form-control my-5 bg-wwhite text-blue textarea1" name="body" id="body" style="height: 50vh;">
 ${this.body}
             </textarea>
         </div>

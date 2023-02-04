@@ -79,7 +79,7 @@ export class NotesController {
             let updatedBody = textArea.value
             // console.log('blurred', updatedBody);
             notesService.saveNote(updatedBody)
-
+            Pop.success('Note Saved!')
         } catch (error) {
             Pop.error(error)
         }
