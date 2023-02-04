@@ -13,6 +13,8 @@ export class Note {
         this.dateUpdated = data.dateUpdated || new Date().toLocaleString('en-US')
         this.color = data.color
         this.body = data.body || ''
+        this.charCount = data.charCount || 0
+        this.wordCount = data.wordCount || 0
     }
 
     get ListTemplate() {
@@ -24,13 +26,17 @@ export class Note {
     get ActiveNoteTemplate() {
         return `
     <div class="row">
-        <div class="col-3">
+        <div class="col-12 col-md-3 d-flex flex-column justify-content-between">
+        <div>
             <h1>${this.title} <i class="mdi mdi mdi-dots-circle text-${this.color} fs-5"></i></h1>
-            <h5 class="text-yellow" >Date Created: <small class="text-wwhite">${this.dateCreated}</small></h5>
-            
-            <h5 class="text-yellow">Date Updated: <small class="text-wwhite">${this.dateUpdated}</small></h5>
+            <h5 class="text-yellow" >date created: <small class="text-wwhite">${this.dateCreated}</small></h5>
+            <h5 class="text-yellow">cate updated: <small class="text-wwhite">${this.dateUpdated}</small></h5>
         </div>
-        <div class="col-8">
+        <div class="">
+        <h6 class="text-wwhite">words: <span class="text-yellow"> ${this.wordCount}</span>  characters: <span class="text-yellow"> ${this.charCount}</span></h6>
+        </div>
+        </div>
+        <div class="col-12 col-md-8">
             <textarea onblur="app.notesController.saveNote()" class="form-control my-5 bg-wwhite text-blue" name="body" id="body" style="height: 50vh;">
 ${this.body}
             </textarea>
@@ -38,7 +44,7 @@ ${this.body}
         <div class="col-1">
             <button onclick="app.notesController.deleteNote('${this.id}')" class="btn bg-pink text-blue fs-1 mt-3"><i class="mdi mdi-delete-circle"></i></button>
         </div>
-        </div>
+    </div>
         `
     }
 

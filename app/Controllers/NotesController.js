@@ -10,7 +10,7 @@ function _drawNotes() {
     let jotCount = appState.notes.length
     appState.notes.forEach(n => template += n.ListTemplate)
     setHTML('note-list', template)
-    setText('jot-count', `Jots  -  ${jotCount}`)
+    setText('jot-count', `jots  -  ${jotCount}`)
 }
 
 function _drawNote() {

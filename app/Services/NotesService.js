@@ -6,10 +6,14 @@ import { saveState } from "../Utils/Store.js";
 class NotesService {
     saveNote(updatedBody) {
         let note = appState.note
+        let wordCount = updatedBody.split(' ').length
+        let charCount = updatedBody.replace(/\s/g, '').length
         // @ts-ignore
         note.body = updatedBody
         // @ts-ignore
         note.dateUpdated = new Date().toLocaleString('en-US')
+        note.charCount = charCount
+        note.wordCount = wordCount
         saveState('notes', appState.notes)
         appState.emit('notes')
         appState.emit('note')
