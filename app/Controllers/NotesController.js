@@ -40,11 +40,16 @@ export class NotesController {
             // @ts-ignore
             window.event.preventDefault()
             // @ts-ignore
+            let elem = document.getElementById('offcanvasExample')
+            // @ts-ignore
             const form = window.event.target
             const formData = getFormData(form)
             notesService.createNote(formData)
             // @ts-ignore
             form.reset()
+            // @ts-ignore
+            elem.classList.remove('show')
+            Pop.toast('New Note Created!', 'success', 'center', 2000, false)
 
         } catch (error) {
             Pop.error(error)

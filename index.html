@@ -87,7 +87,7 @@
 
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header bg-yellow">
-      <h3 class="offcanvas-title text-blue" id="jot-count">jots - 0</h3>
+      <h3 class="offcanvas-title text-blue mdi mdi-feather" id="jot-count">jots - 0</h3>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body bg-blue">
@@ -99,14 +99,14 @@
 
       <!-- SECTION Form Entry -->
       <div class="py-5 my-5 text-yellow">
-        <h6 class="pb-2">create new note</h6>
+        <h6 class="pb-2"></h6>
         <form onsubmit="app.notesController.createNote()">
           <div class="mb-3">
             <div class="row">
               <div class="col-6">
                 <label for="title" class="form-label">title</label>
                 <input type="text" class="form-control bg-wwhite" id="title" name="title" aria-describedby="title"
-                  minlength="3" maxlength="15" required>
+                  minlength="3" maxlength="15" placeholder="create new note" required>
               </div>
               <div class="col-6">
                 <label for="color" class="form-label">color</label>
@@ -121,7 +121,7 @@
               </div>
             </div>
           </div>
-          <button type="submit" data-bs-dismiss="offcanvas" class="btn bg-green"> submit</button>
+          <button id="createNote" type="submit" class="btn bg-green">Create</button>
         </form>
       </div>
     </div>

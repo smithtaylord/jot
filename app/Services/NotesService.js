@@ -27,8 +27,9 @@ class NotesService {
     }
     deleteNote(noteId) {
         let noteIndex = appState.notes.findIndex(n => n.id == noteId)
-        if (noteIndex == -1)
+        if (noteIndex == -1) {
             throw new Error('this is a bad note ID')
+        }
         appState.notes.splice(noteIndex, 1)
         appState.note = null
         saveState('notes', appState.notes)
@@ -42,11 +43,16 @@ class NotesService {
     }
     createNote(formData) {
         // console.log('create note service works');
-        let newNote = new Note(formData)
-        appState.notes.push(newNote)
-        appState.note = newNote
-        saveState('notes', appState.notes)
-        appState.emit('notes')
+        let noteIndex = appState.notes.findIndex(n => n.title == formData.title)
+        if (noteIndex == -1) {
+            let newNote = new Note(formData)
+            appState.notes.push(newNote)
+            appState.note = newNote
+            saveState('notes', appState.notes)
+            appState.emit('notes')
+        } else {
+            throw new Error('This title already exists, create a new title')
+        }
     }
 
 

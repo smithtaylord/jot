@@ -33,6 +33,12 @@ textarea {
     border-color: var(--green);
 }
 
+.btn-notebook:focus {
+    color: var(--green);
+    background-color: var(--blue);
+    border-color: var(--green);
+}
+
 .btn-notebook:hover {
     color: var(--yellow);
     background-color: var(--blue);
