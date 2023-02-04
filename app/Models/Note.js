@@ -42,4 +42,14 @@ ${this.body}
         `
     }
 
+    static EmptyImg() {
+        return `
+    <div>
+        <img
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/024a2b26-70b7-4f67-a9ba-3fecc402f70a/d2wz27k-f61f9786-4f7f-4ef1-b115-6e0b97480809.png/v1/fill/w_900,h_616,strp/fractal_png_14_by_variety_stock_d2wz27k-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjE2IiwicGF0aCI6IlwvZlwvMDI0YTJiMjYtNzBiNy00ZjY3LWE5YmEtM2ZlY2M0MDJmNzBhXC9kMnd6MjdrLWY2MWY5Nzg2LTRmN2YtNGVmMS1iMTE1LTZlMGI5NzQ4MDgwOS5wbmciLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.V33qdkQQnBykHWJGvRgu9sDkrQLnUAsjMI8lSeBEJkY"
+            alt="">
+    </div>
+        `
+    }
+
 }

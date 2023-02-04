@@ -1,4 +1,5 @@
 import { appState } from "../AppState.js";
+import { Note } from "../Models/Note.js";
 import { notesService } from "../Services/NotesService.js";
 import { getFormData } from "../Utils/FormHandler.js";
 import { Pop } from "../Utils/Pop.js";
@@ -18,12 +19,10 @@ function _drawNote() {
     if (note != null) {
         setHTML('activeNote', note.ActiveNoteTemplate)
     } else {
-        setHTML('activeNote', '<h1>EMPTY</h1>')
+        setHTML('activeNote', Note.EmptyImg())
     }
 }
-function _drawJotCount() {
 
-}
 
 export class NotesController {
 
