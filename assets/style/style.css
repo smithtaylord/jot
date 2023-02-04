@@ -1,4 +1,25 @@
 /* BASIC STYLES HERE */
+:root {
+    --wwhite: #f4f1de;
+    --pink: #e07a5f;
+    --blue: #3d405b;
+    --green: #81b29a;
+    --yellow: #f2cc8f;
+
+
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    background-color: var(--blue);
+    color: var(--wwhite);
+}
+
+
+
+.logo {
+    font-weight: 900;
+}
 
 .cir-color-red {
     color: red;
@@ -18,4 +39,51 @@
 
 .cir-color-white {
     color: white;
+}
+
+.bg-mtn {
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/25d45014-8cc3-4c98-b02c-5a0cf3a55ddd/dataem1-00cc1dc6-425b-4411-8476-965fe7b83031.png/v1/fill/w_900,h_900,strp/water_droplets_on_a_transparent_background__by_prussiaart_dataem1-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTAwIiwicGF0aCI6IlwvZlwvMjVkNDUwMTQtOGNjMy00Yzk4LWIwMmMtNWEwY2YzYTU1ZGRkXC9kYXRhZW0xLTAwY2MxZGM2LTQyNWItNDQxMS04NDc2LTk2NWZlN2I4MzAzMS5wbmciLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.mWuvcisrcfrCKSBANz6PY4X_9HCL0v-UZ1azwVzNpv4');
+    min-height: 75vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-wwhite {
+    background-color: var(--wwhite);
+}
+
+.text-wwhite {
+    color: var(--wwhite);
+}
+
+.bg-blue {
+    background-color: var(--blue);
+}
+
+.text-blue {
+    color: var(--blue);
+}
+
+.bg-pink {
+    background-color: var(--pink);
+}
+
+.text-pink {
+    color: var(--pink);
+}
+
+.bg-green {
+    background-color: var(--green);
+}
+
+.text-green {
+    color: var(--green);
+}
+
+.bg-yellow {
+    background-color: var(--yellow);
+}
+
+.text-yellow {
+    color: var(--yellow);
 }

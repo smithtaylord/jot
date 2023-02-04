@@ -11,17 +11,15 @@ class NotesService {
         // @ts-ignore
         note.dateUpdated = new Date().toLocaleString('en-US')
         saveState('notes', appState.notes)
-
         appState.emit('notes')
+        appState.emit('note')
 
 
     }
     deleteNote(noteId) {
         let noteIndex = appState.notes.findIndex(n => n.id == noteId)
-
         if (noteIndex == -1)
             throw new Error('this is a bad note ID')
-
         appState.notes.splice(noteIndex, 1)
         appState.note = null
         saveState('notes', appState.notes)

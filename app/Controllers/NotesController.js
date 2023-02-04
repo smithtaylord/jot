@@ -6,9 +6,10 @@ import { setHTML, setText } from "../Utils/Writer.js";
 
 function _drawNotes() {
     let template = ''
+    let jotCount = appState.notes.length
     appState.notes.forEach(n => template += n.ListTemplate)
     setHTML('note-list', template)
-    setText('jot-count', `Jots  -  ${appState.notes.length}`)
+    setText('jot-count', `Jots  -  ${jotCount}`)
 }
 
 function _drawNote() {
@@ -19,6 +20,9 @@ function _drawNote() {
     } else {
         setHTML('activeNote', '<h1>EMPTY</h1>')
     }
+}
+function _drawJotCount() {
+
 }
 
 export class NotesController {
@@ -60,7 +64,7 @@ export class NotesController {
         try {
             const yes = await Pop.confirm('Are you sure you want to delete this note?')
             if (!yes) { return }
-            console.log(noteId);
+            // console.log(noteId);
             notesService.deleteNote(noteId)
 
         } catch (error) {
@@ -74,7 +78,7 @@ export class NotesController {
             let textArea = document.getElementById('body')
             // @ts-ignore
             let updatedBody = textArea.value
-            console.log('blurred', updatedBody);
+            // console.log('blurred', updatedBody);
             notesService.saveNote(updatedBody)
 
         } catch (error) {
