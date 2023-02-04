@@ -17,7 +17,7 @@ export class Note {
 
     get ListTemplate() {
         return `
-        <h1 type="button" data-bs-dismiss="offcanvas" onclick="app.notesController.setNote('${this.id}')" class="selectable">${this.title} <i class="mdi mdi mdi-dots-circle cir-color-${this.color} fs-5"></i></h1>
+        <h1 type="button" data-bs-dismiss="offcanvas" onclick="app.notesController.setNote('${this.id}')" class="selectable">${this.title} <i class="mdi mdi mdi-dots-circle text-${this.color} fs-5"></i></h1>
         `
     }
 
@@ -25,10 +25,10 @@ export class Note {
         return `
     <div class="row">
         <div class="col-3">
-            <h1>${this.title} <i class="mdi mdi mdi-dots-circle cir-color-${this.color} fs-5"></i></h1>
+            <h1>${this.title} <i class="mdi mdi mdi-dots-circle text-${this.color} fs-5"></i></h1>
             <h5 class="text-yellow" >Date Created: <small class="text-wwhite">${this.dateCreated}</small></h5>
             
-            <h5 class="text-yellow" >Date Updated: <small class="text-wwhite">${this.dateUpdated}</small></h5>
+            <h5 class="text-yellow">Date Updated: <small class="text-wwhite">${this.dateUpdated}</small></h5>
         </div>
         <div class="col-8">
             <textarea onblur="app.notesController.saveNote()" class="form-control my-5 bg-wwhite text-blue" name="body" id="body" style="height: 50vh;">
